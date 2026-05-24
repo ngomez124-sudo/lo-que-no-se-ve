@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Lo que no se ve</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Comfortaa:wght@300;400;500;600&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+<div id="veil"></div>
+
+<!-- ════════════════════════════════════════════
+     PORTADA
+════════════════════════════════════════════ -->
+<div id="s-cover" class="screen active in">
+  <div class="paper-grain"></div>
+  <div class="cover-art">
+    <svg viewBox="0 0 390 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect width="390" height="340" fill="#E8D8B8"/>
+      <rect width="390" height="160" fill="#DCCCA8"/>
+      <!-- Sun haze -->
+      <circle cx="320" cy="55" r="55" fill="#F5C880" opacity=".22"/>
+      <circle cx="320" cy="55" r="32" fill="#F5C880" opacity=".28"/>
+      <circle cx="320" cy="55" r="16" fill="#F5A840" opacity=".55"/>
+      <!-- Ground -->
+      <rect y="210" width="390" height="130" fill="#C8B890"/>
+      <rect y="228" width="390" height="112" fill="#C0B088"/>
+      <!-- House main -->
+      <rect x="88" y="148" width="214" height="135" fill="#F0E0C4" rx="3"/>
+      <rect x="88" y="148" width="54" height="135" fill="rgba(0,0,0,.035)" rx="3"/>
+      <!-- Roof -->
+      <polygon points="68,156 195,58 322,156" fill="#B87038"/>
+      <polygon points="68,156 195,58 195,156" fill="rgba(0,0,0,.07)"/>
+      <line x1="68" y1="156" x2="195" y2="58" stroke="#9A5418" stroke-width="2.2"/>
+      <line x1="322" y1="156" x2="195" y2="58" stroke="#9A5418" stroke-width="2.2"/>
+      <!-- Chimney -->
+      <rect x="238" y="82" width="22" height="52" fill="#A86828" rx="2"/>
+      <rect x="233" y="78" width="32" height="10" fill="#B87838" rx="2"/>
+      <!-- Smoke -->
+      <path d="M249,76 Q244,60 249,48 Q254,36 248,24" fill="none" stroke="rgba(200,180,160,.55)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M255,76 Q262,62 256,50 Q250,38 257,26" fill="none" stroke="rgba(200,180,160,.38)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Door -->
+      <rect x="166" y="234" width="58" height="49" fill="#7A4E28" rx="3"/>
+      <path d="M166,238 Q195,228 224,238" fill="#6A3E18"/>
+      <circle cx="215" cy="260" r="4.5" fill="#C88838"/>
+      <rect x="177" y="248" width="16" height="22" fill="#6A3E18" rx="2" opacity=".4"/>
+      <rect x="200" y="248" width="16" height="22" fill="#6A3E18" rx="2" opacity=".4"/>
+      <!-- Step -->
+      <rect x="158" y="280" width="74" height="7" fill="#C09868" rx="1.5"/>
+      <!-- Window left warm glow -->
+      <rect x="100" y="175" width="60" height="48" fill="#B8D8E8" rx="3.5"/>
+      <rect x="100" y="175" width="60" height="48" fill="rgba(255,240,180,.2)" rx="3.5"/>
+      <line x1="130" y1="175" x2="130" y2="223" stroke="#90B8CC" stroke-width="1.4"/>
+      <line x1="100" y1="199" x2="160" y2="199" stroke="#90B8CC" stroke-width="1.4"/>
+      <rect x="101" y="176" width="28" height="22" fill="rgba(255,235,150,.22)"/>
+      <!-- Curtains L -->
+      <path d="M98,172 Q109,190 98,208" stroke="#D4A07A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M162,172 Q151,190 162,208" stroke="#D4A07A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <!-- Window right -->
+      <rect x="230" y="175" width="60" height="48" fill="#B8D8E8" rx="3.5"/>
+      <line x1="260" y1="175" x2="260" y2="223" stroke="#90B8CC" stroke-width="1.4"/>
+      <line x1="230" y1="199" x2="290" y2="199" stroke="#90B8CC" stroke-width="1.4"/>
+      <rect x="261" y="176" width="28" height="22" fill="rgba(255,235,150,.18)"/>
+      <path d="M228,172 Q239,190 228,208" stroke="#D4A07A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M292,172 Q281,190 292,208" stroke="#D4A07A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <!-- Hanging lamp -->
+      <line x1="195" y1="156" x2="195" y2="176" stroke="#8B6840" stroke-width="1.8"/>
+      <ellipse cx="195" cy="183" rx="11" ry="7.5" fill="#E0B048"/>
+      <circle cx="195" cy="181" r="4.5" fill="#FFF0A0" opacity=".9"/>
+      <!-- Flower pots -->
+      <rect x="64" y="292" width="22" height="26" fill="#986038" rx="3"/>
+      <rect x="62" y="288" width="26" height="8" fill="#B07848" rx="2"/>
+      <ellipse cx="75" cy="283" rx="22" ry="15" fill="#5A8428"/>
+      <ellipse cx="65" cy="275" rx="10" ry="8" fill="#4A7418"/>
+      <circle cx="62" cy="269" r="5.5" fill="#DE5E78"/>
+      <circle cx="78" cy="267" r="5" fill="#E09038"/>
+      <rect x="304" y="292" width="22" height="26" fill="#986038" rx="3"/>
+      <rect x="302" y="288" width="26" height="8" fill="#B07848" rx="2"/>
+      <ellipse cx="315" cy="283" rx="22" ry="15" fill="#5A8428"/>
+      <circle cx="310" cy="272" r="5" fill="#DE5E78"/>
+      <circle cx="322" cy="270" r="4.5" fill="#E09038"/>
+      <!-- Hanging plants -->
+      <line x1="106" y1="156" x2="106" y2="176" stroke="#8B6840" stroke-width="1.5"/>
+      <ellipse cx="106" cy="182" rx="17" ry="12" fill="#4A8018"/>
+      <ellipse cx="97" cy="176" rx="9" ry="7" fill="#3A7008"/>
+      <line x1="284" y1="156" x2="284" y2="176" stroke="#8B6840" stroke-width="1.5"/>
+      <ellipse cx="284" cy="182" rx="17" ry="12" fill="#4A8018"/>
+      <!-- Fence -->
+      <rect x="18" y="278" width="6" height="44" fill="#C0A068" rx="2"/>
+      <rect x="36" y="281" width="6" height="40" fill="#C0A068" rx="2"/>
+      <line x1="14" y1="292" x2="46" y2="292" stroke="#C0A068" stroke-width="4"/>
+      <rect x="348" y="278" width="6" height="44" fill="#C0A068" rx="2"/>
+      <rect x="366" y="281" width="6" height="40" fill="#C0A068" rx="2"/>
+      <line x1="344" y1="292" x2="376" y2="292" stroke="#C0A068" stroke-width="4"/>
+      <!-- Clothesline -->
+      <line x1="18" y1="140" x2="100" y2="136" stroke="#8A7050" stroke-width="1.5"/>
+      <rect x="28" y="130" width="14" height="20" fill="#6090B0" rx="1" transform="rotate(-2 35 140)"/>
+      <rect x="50" y="133" width="16" height="22" fill="#E07050" rx="1" transform="rotate(2 58 144)"/>
+      <rect x="76" y="132" width="14" height="18" fill="#80A060" rx="1" transform="rotate(-1 83 141)"/>
+      <!-- Birds -->
+      <path d="M50,48 Q55,43 60,48" fill="none" stroke="#9A8060" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M70,38 Q75,33 80,38" fill="none" stroke="#9A8060" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M310,36 Q315,30 320,36" fill="none" stroke="#9A8060" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M330,48 Q336,42 342,48" fill="none" stroke="#9A8060" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Path to door -->
+      <path d="M160,292 Q195,288 230,292 L240,340 L150,340 Z" fill="rgba(195,165,115,.42)"/>
+    </svg>
+  </div>
+  <div class="cover-content">
+    <span class="cover-kicker">Una experiencia narrativa</span>
+    <h1 class="cover-title">Lo que<br>no se ve</h1>
+    <p class="cover-sub">Barrio La Nevada, Valledupar.<br>Un día. Dos vidas. Decisiones reales.</p>
+    <button class="cover-btn" onclick="goTo('s-intro')">✦ Afrontar el día</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     INTRO
+════════════════════════════════════════════ -->
+<div id="s-intro" class="screen">
+  <div class="intro-art">
+    <svg viewBox="0 0 390 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect width="390" height="360" fill="#C8B490"/>
+      <rect y="218" width="390" height="142" fill="#B8A478"/>
+      <!-- Buildings bg -->
+      <rect x="258" y="128" width="82" height="112" fill="#D4C098" rx="2"/>
+      <rect x="298" y="108" width="52" height="132" fill="#C8B488" rx="2"/>
+      <rect x="18" y="138" width="72" height="102" fill="#D0BC94" rx="2"/>
+      <!-- Building windows -->
+      <rect x="268" y="138" width="24" height="18" rx="1" fill="#F0E4A0" opacity=".6"/>
+      <rect x="298" y="118" width="18" height="14" rx="1" fill="#F0E4A0" opacity=".6"/>
+      <rect x="26" y="148" width="20" height="15" rx="1" fill="#F0E4A0" opacity=".6"/>
+      <rect x="52" y="148" width="20" height="15" rx="1" fill="#E8D898" opacity=".5"/>
+      <!-- Main house -->
+      <rect x="72" y="125" width="246" height="142" fill="#EAD8B4"/>
+      <polygon points="52,132 195,42 338,132" fill="#B86828"/>
+      <polygon points="52,132 195,42 195,132" fill="rgba(0,0,0,.07)"/>
+      <rect x="216" y="60" width="22" height="48" fill="#A06028" rx="2"/>
+      <!-- Kitchen window warm glow -->
+      <rect x="90" y="148" width="84" height="68" fill="#FFE8A0" rx="4"/>
+      <rect x="90" y="148" width="84" height="68" fill="rgba(255,215,70,.2)" rx="4"/>
+      <line x1="132" y1="148" x2="132" y2="216" stroke="#E0BE58" stroke-width="1.5"/>
+      <line x1="90" y1="182" x2="174" y2="182" stroke="#E0BE58" stroke-width="1.5"/>
+      <!-- Woman silhouette in window -->
+      <ellipse cx="112" cy="172" rx="10" ry="11" fill="rgba(80,40,10,.48)"/>
+      <ellipse cx="112" cy="161" rx="8" ry="6" fill="rgba(80,40,10,.5)"/>
+      <line x1="122" y1="174" x2="138" y2="178" stroke="rgba(80,40,10,.5)" stroke-width="4" stroke-linecap="round"/>
+      <!-- Right window -->
+      <rect x="216" y="150" width="72" height="62" fill="#C0D8E0" opacity=".65" rx="3"/>
+      <line x1="252" y1="150" x2="252" y2="212" stroke="#90B0C0" stroke-width="1.2"/>
+      <line x1="216" y1="181" x2="288" y2="181" stroke="#90B0C0" stroke-width="1.2"/>
+      <!-- Door -->
+      <rect x="165" y="224" width="60" height="43" fill="#7A4E28" rx="3"/>
+      <circle cx="215" cy="247" r="3.5" fill="#C88838"/>
+      <!-- Clothesline -->
+      <line x1="28" y1="155" x2="82" y2="162" stroke="#8A7050" stroke-width="1.5"/>
+      <rect x="36" y="152" width="14" height="20" fill="#6090B0" rx="1" transform="rotate(-3 43 162)"/>
+      <rect x="58" y="155" width="16" height="22" fill="#E07050" rx="1" transform="rotate(2 66 166)"/>
+      <!-- Street -->
+      <rect y="308" width="390" height="52" fill="#B0A068"/>
+      <line x1="0" y1="334" x2="390" y2="334" stroke="#C8B880" stroke-width="1.8" stroke-dasharray="28,18"/>
+      <!-- Kids outside -->
+      <circle cx="78" cy="286" r="13" fill="#C89070"/>
+      <ellipse cx="78" cy="272" rx="11" ry="7" fill="#2A1A10"/>
+      <ellipse cx="78" cy="300" rx="11" ry="8" fill="#E07050"/>
+      <circle cx="118" cy="290" r="12" fill="#C89070"/>
+      <ellipse cx="118" cy="277" rx="10" ry="7" fill="#1A1010"/>
+      <ellipse cx="118" cy="303" rx="10" ry="8" fill="#5080C0"/>
+      <!-- Power lines -->
+      <line x1="0" y1="95" x2="96" y2="90" stroke="#5A4A3A" stroke-width="1.5"/>
+      <line x1="294" y1="93" x2="390" y2="98" stroke="#5A4A3A" stroke-width="1.5"/>
+      <!-- Trees street -->
+      <rect x="48" y="262" width="7" height="24" fill="#6B4020"/>
+      <ellipse cx="51" cy="258" rx="16" ry="13" fill="#5C7030"/>
+      <rect x="330" y="258" width="7" height="28" fill="#6B4020"/>
+      <ellipse cx="333" cy="254" rx="16" ry="13" fill="#4A6820"/>
+    </svg>
+  </div>
+  <div class="intro-panel">
+    <p>Esta experiencia está basada en la vida cotidiana de familias en el barrio <strong>La Nevada, Valledupar</strong>.<br><br>
+    Aquí, muchas madres cabeza de hogar deben trabajar y al mismo tiempo encargarse de todas las tareas domésticas. Sus hijos mayores asumen responsabilidades que no les corresponden.<br><br>
+    <strong>Tu energía y tu tiempo son limitados. No podrás hacerlo todo.</strong></p>
+    <button class="intro-next" onclick="goTo('s-chars')">→</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SELECCIÓN DE PERSONAJE
+════════════════════════════════════════════ -->
+<div id="s-chars" class="screen">
+  <div class="paper-grain"></div>
+  <div class="chars-header">
+    <div class="chars-label">Elige tu personaje</div>
+    <div class="chars-q">¿A quién sigues<br>para vivir el día?</div>
+  </div>
+
+  <div class="chars-row">
+
+    <!-- DAYLEN -->
+    <div class="char-card" id="card-daylen" onclick="pickChar('daylen')">
+      <div class="char-stripe" style="background:#C8622A;"></div>
+      <div class="char-art">
+        <svg viewBox="0 0 148 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="148" height="180" fill="#E8D4B0"/>
+          <rect y="118" width="148" height="62" fill="#D4BF94"/>
+          <rect y="110" width="148" height="11" fill="#C4AF84"/>
+          <!-- shelf -->
+          <rect x="0" y="54" width="122" height="7" fill="#B09060" rx="1"/>
+          <rect x="9" y="32" width="28" height="23" fill="#D4A870" rx="3"/>
+          <ellipse cx="62" cy="44" rx="15" ry="11" fill="#6890A0"/>
+          <ellipse cx="62" cy="34" rx="9" ry="4.5" fill="#587888"/>
+          <rect x="90" y="32" width="22" height="22" fill="#C0904A" rx="2"/>
+          <!-- lamp -->
+          <line x1="76" y1="0" x2="76" y2="18" stroke="#806040" stroke-width="1.5"/>
+          <ellipse cx="76" cy="26" rx="18" ry="12" fill="#C06030"/>
+          <circle cx="76" cy="24" r="6" fill="#FFE080" opacity=".9"/>
+          <!-- body -->
+          <ellipse cx="76" cy="158" rx="28" ry="16" fill="#4A7840"/>
+          <rect x="58" y="126" width="42" height="38" fill="#5A9050" rx="3"/>
+          <!-- apron bib -->
+          <rect x="66" y="109" width="26" height="22" fill="#6AAA60" rx="2"/>
+          <!-- head -->
+          <ellipse cx="76" cy="97" rx="24" ry="26" fill="#C89068"/>
+          <!-- hair bun -->
+          <ellipse cx="76" cy="74" rx="21" ry="16" fill="#231510"/>
+          <circle cx="76" cy="65" r="13" fill="#231510"/>
+          <ellipse cx="89" cy="68" rx="8" ry="6" fill="#2E1C12"/>
+          <!-- face -->
+          <ellipse cx="68" cy="95" rx="3.5" ry="4" fill="#1A1008"/>
+          <ellipse cx="84" cy="95" rx="3.5" ry="4" fill="#1A1008"/>
+          <path d="M70,109 Q76,115 82,109" fill="none" stroke="#9A5040" stroke-width="1.8" stroke-linecap="round"/>
+          <ellipse cx="62" cy="101" rx="7" ry="5" fill="rgba(220,120,100,.18)"/>
+          <ellipse cx="90" cy="101" rx="7" ry="5" fill="rgba(220,120,100,.18)"/>
+          <!-- arm + pot -->
+          <line x1="98" y1="128" x2="126" y2="133" stroke="#C89068" stroke-width="9" stroke-linecap="round"/>
+          <rect x="120" y="104" width="4" height="35" fill="#888" rx="1"/>
+          <ellipse cx="126" cy="107" rx="15" ry="7" fill="#C06030"/>
+          <rect x="111" y="98" width="30" height="14" fill="#C06030" rx="3"/>
+          <ellipse cx="126" cy="99" rx="13" ry="4.5" fill="#D07040"/>
+          <path d="M118,97 Q114,82 118,72" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M128,96 Q133,81 128,71" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="56" y1="128" x2="36" y2="138" stroke="#C89068" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="char-info">
+        <div class="char-info-top">
+          <div class="char-name" style="color:#A84E1A;">Daylen</div>
+          <div class="char-role">Mamá · 34 años</div>
+          <div class="char-desc">Madre soltera de 3 hijos. Trabaja fuera y carga con el hogar al mismo tiempo.</div>
+        </div>
+        <div class="char-stats">
+          <div class="char-stat-row">
+            <span class="char-stat-lbl">Energía</span>
+            <div class="char-stat-track"><div class="char-stat-fill" style="width:100%;background:#C8622A;"></div></div>
+            <span style="font-family:'Comfortaa';font-size:9px;color:var(--muted);font-weight:700;">10</span>
+          </div>
+          <div class="char-stat-row">
+            <span class="char-stat-lbl">Tiempo</span>
+            <div class="char-stat-track"><div class="char-stat-fill" style="width:100%;background:#7A9060;"></div></div>
+            <span style="font-family:'Comfortaa';font-size:9px;color:var(--muted);font-weight:700;">10</span>
+          </div>
+        </div>
+      </div>
+      <div class="char-arrow">→</div>
+    </div>
+
+    <!-- ANA -->
+    <div class="char-card" id="card-ana" onclick="pickChar('ana')">
+      <div class="char-stripe" style="background:#6A8FAA;"></div>
+      <div class="char-art">
+        <svg viewBox="0 0 148 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="148" height="180" fill="#E0D0B5"/>
+          <rect y="118" width="148" height="62" fill="#CCBA90"/>
+          <rect y="110" width="148" height="11" fill="#C0AE84"/>
+          <!-- window -->
+          <rect x="98" y="18" width="48" height="72" fill="#C0D8E8" rx="3"/>
+          <line x1="122" y1="18" x2="122" y2="90" stroke="#90B8CC" stroke-width="1"/>
+          <line x1="98" y1="54" x2="146" y2="54" stroke="#90B8CC" stroke-width="1"/>
+          <rect x="98" y="18" width="24" height="36" fill="rgba(255,240,180,.28)"/>
+          <path d="M96,14 Q109,34 96,54 Q107,70 96,90" fill="rgba(210,160,120,.65)" stroke="#C09870" stroke-width=".8"/>
+          <!-- clock -->
+          <circle cx="36" cy="50" r="22" fill="#F5EAD8" stroke="#C09860" stroke-width="2.2"/>
+          <circle cx="36" cy="50" r="18" fill="#F8EFE0" stroke="#D4B880" stroke-width="1"/>
+          <line x1="36" y1="50" x2="36" y2="34" stroke="#303030" stroke-width="2"/>
+          <line x1="36" y1="50" x2="47" y2="56" stroke="#303030" stroke-width="1.5"/>
+          <circle cx="36" cy="50" r="3" fill="#606060"/>
+          <!-- books -->
+          <rect x="5" y="62" width="12" height="38" fill="#E07050" rx="1"/>
+          <rect x="19" y="66" width="11" height="34" fill="#5080C0" rx="1"/>
+          <rect x="32" y="64" width="13" height="36" fill="#60A050" rx="1"/>
+          <!-- body -->
+          <ellipse cx="76" cy="155" rx="22" ry="14" fill="#5A80A8"/>
+          <rect x="60" y="126" width="34" height="36" fill="#6A90B8" rx="3"/>
+          <!-- head -->
+          <ellipse cx="76" cy="98" rx="22" ry="24" fill="#C89068"/>
+          <!-- hair -->
+          <ellipse cx="76" cy="78" rx="24" ry="18" fill="#1A1008"/>
+          <rect x="56" y="82" width="9" height="28" fill="#1A1008" rx="4"/>
+          <rect x="91" y="82" width="9" height="25" fill="#1A1008" rx="4"/>
+          <rect x="57" y="76" width="38" height="12" fill="#231510" rx="2"/>
+          <!-- face — pensive -->
+          <ellipse cx="68" cy="97" rx="2.8" ry="3.2" fill="#1A1008"/>
+          <ellipse cx="84" cy="97" rx="2.8" ry="3.2" fill="#1A1008"/>
+          <path d="M70,108 Q76,105 82,108" fill="none" stroke="#9A5040" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M63,88 Q68,85 74,87" fill="none" stroke="#3A2010" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M78,87 Q83,85 88,88" fill="none" stroke="#3A2010" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="62" cy="103" rx="6" ry="4" fill="rgba(220,120,100,.16)"/>
+          <ellipse cx="90" cy="103" rx="6" ry="4" fill="rgba(220,120,100,.16)"/>
+          <!-- hand on chin -->
+          <ellipse cx="76" cy="120" rx="22" ry="10" fill="#6A90B8"/>
+          <line x1="88" y1="120" x2="84" y2="110" stroke="#C89068" stroke-width="7" stroke-linecap="round"/>
+          <ellipse cx="82" cy="109" rx="7" ry="5.5" fill="#C89068"/>
+          <!-- notebook -->
+          <rect x="26" y="118" width="55" height="40" fill="#F5EDDE" rx="2" transform="rotate(-4 53 138)"/>
+          <line x1="29" y1="131" x2="78" y2="126" stroke="#D0C0A8" stroke-width="1"/>
+          <line x1="29" y1="142" x2="78" y2="137" stroke="#D0C0A8" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="char-info">
+        <div class="char-info-top">
+          <div class="char-name" style="color:#3A5A78;">Ana</div>
+          <div class="char-role" style="color:#6A8FAA;">Hija mayor · 17 años</div>
+          <div class="char-desc">Estudiante que asume el hogar cuando su mamá trabaja. Quiere estudiar, pero hay que elegir.</div>
+        </div>
+        <div class="char-stats">
+          <div class="char-stat-row">
+            <span class="char-stat-lbl">Energía</span>
+            <div class="char-stat-track"><div class="char-stat-fill" style="width:100%;background:#C8622A;"></div></div>
+            <span style="font-family:'Comfortaa';font-size:9px;color:var(--muted);font-weight:700;">10</span>
+          </div>
+          <div class="char-stat-row">
+            <span class="char-stat-lbl">Tiempo</span>
+            <div class="char-stat-track"><div class="char-stat-fill" style="width:100%;background:#7A9060;"></div></div>
+            <span style="font-family:'Comfortaa';font-size:9px;color:var(--muted);font-weight:700;">10</span>
+          </div>
+        </div>
+      </div>
+      <div class="char-arrow">→</div>
+    </div>
+
+  </div>
+  <div class="chars-hint">Toca una tarjeta para comenzar</div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     JUEGO
+════════════════════════════════════════════ -->
+<div id="s-game" class="screen">
+  <div class="game-art" id="g-art"></div>
+  <div class="hud">
+    <div class="hud-bar-row">
+      <div class="hud-icon energy">E</div>
+      <div class="hud-track"><div class="hud-fill fill-e" id="hud-e" style="width:100%"></div></div>
+      <span class="hud-val" id="val-e">10</span>
+    </div>
+    <div class="hud-bar-row">
+      <div class="hud-icon time">T</div>
+      <div class="hud-track"><div class="hud-fill fill-t" id="hud-t" style="width:100%"></div></div>
+      <span class="hud-val" id="val-t">10</span>
+    </div>
+  </div>
+  <button class="hud-home" onclick="goTo('s-cover')" title="Inicio">⌂</button>
+  <div class="narr-panel" id="narr-panel">
+    <div class="narr-char-tag"><div class="narr-dot"></div><span id="narr-who">DAYLEN</span></div>
+    <div class="narr-text" id="narr-text">Cargando…</div>
+    <button class="narr-btn" id="narr-btn" onclick="nextStep()">→</button>
+  </div>
+  <!-- Evento popup en game -->
+  <div class="popup-veil" id="ev-popup">
+    <div class="popup-card">
+      <div class="popup-header">
+        <div class="popup-icon-wrap" id="ev-icon-wrap" style="background:#DA9468">🍳</div>
+        <div class="popup-badge" id="ev-badge" style="background:#FDF0E8;color:#805030">EVENTO</div>
+        <div class="popup-title" id="ev-title">Evento</div>
+      </div>
+      <div class="popup-body">
+        <div class="popup-text" id="ev-text"></div>
+        <div class="popup-costs" id="ev-costs"></div>
+      </div>
+      <div class="popup-footer">
+        <button class="popup-btn" onclick="dismissPopup()">Continuar →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ELECCIÓN
+════════════════════════════════════════════ -->
+<div id="s-choice" class="screen">
+  <div class="paper-grain"></div>
+  <div class="choice-header-row">
+    <div class="choice-header-left">
+      <div class="choice-eyebrow2">Decisión</div>
+      <div class="choice-q2" id="choice-q">¿Qué haces primero?</div>
+    </div>
+    <div class="timer-wrap">
+      <svg class="timer-svg" viewBox="0 0 62 62">
+        <circle class="t-track" cx="31" cy="31" r="27"/>
+        <circle class="t-arc" id="t-arc" cx="31" cy="31" r="27"/>
+      </svg>
+      <div class="timer-num" id="t-num">15</div>
+    </div>
+  </div>
+  <div class="choice-cards" id="choice-cards"></div>
+  <!-- Consecuencia popup -->
+  <div class="popup-veil" id="ch-popup">
+    <div class="popup-card">
+      <div class="popup-header">
+        <div class="popup-icon-wrap" id="ch-icon-wrap" style="background:#DA9468">⚡</div>
+        <div class="popup-badge" id="ch-badge" style="background:#FDF0E8;color:#805030">CONSECUENCIA</div>
+        <div class="popup-title" id="ch-title">Resultado</div>
+      </div>
+      <div class="popup-body">
+        <div class="popup-text" id="ch-text"></div>
+        <div class="popup-costs" id="ch-costs"></div>
+      </div>
+      <div class="popup-footer">
+        <button class="popup-btn" onclick="dismissChoice()">Continuar →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     FINAL
+════════════════════════════════════════════ -->
+<div id="s-end" class="screen">
+  <div class="paper-grain"></div>
+  <div class="end-card">
+    <div class="end-header">
+      <span class="end-icon" id="end-icon">😔</span>
+      <div class="end-eyebrow">Fin del día</div>
+      <div class="end-title" id="end-title">Cansancio acumulado</div>
+    </div>
+    <div class="end-body">
+      <div class="end-text" id="end-text"></div>
+      <div class="end-stats">
+        <div class="e-stat"><div class="e-stat-val" id="es-e">0</div><div class="e-stat-lbl">Energía</div></div>
+        <div class="e-stat"><div class="e-stat-val" id="es-d">0</div><div class="e-stat-lbl">Decisiones</div></div>
+        <div class="e-stat"><div class="e-stat-val" id="es-t">0</div><div class="e-stat-lbl">Tiempo</div></div>
+      </div>
+      <div class="end-actions">
+        <button class="end-btn-main" onclick="replayGame()">↺ Otro día más</button>
+        <button class="end-btn-sec" onclick="goTo('s-chars')">Cambiar personaje</button>
+        <button class="end-btn-sec" onclick="goTo('s-cover')">Volver al inicio</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- #app -->
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,621 @@
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#FDF6EE;
+  --warm:#F5E9D8;
+  --terra:#C8622A;
+  --terra2:#E08A5A;
+  --terra3:#A84E1A;
+  --cream:#FBF3EA;
+  --ink:#2D2318;
+  --ink2:#5C4A38;
+  --muted:#9C8A78;
+  --olive:#7A9060;
+  --blue:#6A8FAA;
+  --paper:#EFE4D3;
+  --line:#D4B898;
+  --shadow:rgba(80,50,20,.13);
+  --white:#FFFDF8;
+}
+html,body{
+  width:100%;height:100%;overflow:hidden;
+  background:#2D1F10;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Comfortaa',sans-serif;
+}
+#app{
+  width:390px;height:844px;
+  position:relative;overflow:hidden;
+  background:var(--bg);
+}
+
+/* ── SCREENS ─────────────────────────────── */
+.screen{
+  position:absolute;inset:0;
+  display:none;flex-direction:column;
+  align-items:stretch;overflow:hidden;
+}
+.screen.active{display:flex}
+.screen.in{animation:scrIn .4s cubic-bezier(.22,1,.36,1) both}
+.screen.out{animation:scrOut .3s ease-in both}
+@keyframes scrIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes scrOut{from{opacity:1}to{opacity:0;transform:scale(.96)}}
+
+/* ── PAPER TEXTURE ───────────────────────── */
+.paper-grain{
+  position:absolute;inset:0;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  z-index:1;
+}
+
+/* ═══════════════════════════════════════════
+   PORTADA
+═══════════════════════════════════════════ */
+#s-cover{background:var(--warm);align-items:center}
+.cover-art{width:100%;height:340px;flex-shrink:0;position:relative;overflow:hidden}
+.cover-content{
+  display:flex;flex-direction:column;align-items:center;
+  padding:0 32px;flex:1;justify-content:center;gap:14px;
+  position:relative;z-index:2;
+}
+.cover-kicker{
+  font-family:'Comfortaa',sans-serif;
+  font-size:10px;font-weight:600;letter-spacing:3px;
+  color:var(--terra);text-transform:uppercase;opacity:.85;
+}
+.cover-title{
+  font-family:'Fredericka the Great',serif;
+  font-size:54px;color:var(--ink);
+  line-height:.95;text-align:center;
+}
+.cover-sub{
+  font-family:'Comfortaa',sans-serif;
+  font-size:12.5px;color:var(--ink2);
+  text-align:center;line-height:1.75;font-weight:500;
+}
+.cover-btn{
+  background:var(--terra);color:white;border:none;
+  border-radius:100px;padding:15px 44px;
+  font-family:'Fredericka the Great',serif;
+  font-size:17px;letter-spacing:.5px;cursor:pointer;
+  box-shadow:0 6px 22px rgba(200,98,42,.38),0 2px 0 rgba(0,0,0,.1) inset;
+  transition:all .22s cubic-bezier(.34,1.56,.64,1);
+}
+.cover-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 32px rgba(200,98,42,.48)}
+.cover-btn:active{transform:scale(.97)}
+
+/* ═══════════════════════════════════════════
+   INTRO
+═══════════════════════════════════════════ */
+#s-intro{background:var(--cream)}
+.intro-art{width:100%;height:360px;flex-shrink:0;overflow:hidden;position:relative}
+.intro-panel{
+  background:var(--white);border-radius:32px 32px 0 0;flex:1;
+  padding:26px 32px 28px;
+  box-shadow:0 -8px 40px rgba(80,50,20,.08);
+}
+.intro-panel p{
+  font-family:'Comfortaa',sans-serif;
+  font-size:13px;line-height:1.9;color:var(--ink2);font-weight:500;
+}
+.intro-panel strong{color:var(--terra3);font-weight:700;}
+.intro-next{
+  width:50px;height:50px;background:var(--terra);border:none;
+  border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  margin:18px auto 0;
+  box-shadow:0 5px 18px rgba(200,98,42,.4);
+  font-family:'Fredericka the Great',serif;
+  font-size:20px;color:white;
+  transition:all .22s cubic-bezier(.34,1.56,.64,1);
+}
+.intro-next:hover{transform:scale(1.12) translateY(-2px)}
+.intro-next:active{transform:scale(.9)}
+
+/* ═══════════════════════════════════════════
+   SELECCIÓN DE PERSONAJE
+═══════════════════════════════════════════ */
+#s-chars{
+  background:var(--warm);
+  align-items:center;
+  justify-content:flex-start;
+  overflow:hidden;
+}
+.chars-header{
+  padding:36px 28px 0;
+  text-align:center;
+  z-index:2;position:relative;
+  flex-shrink:0;width:100%;
+}
+.chars-label{
+  font-family:'Comfortaa',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;
+  color:var(--terra);text-transform:uppercase;margin-bottom:6px;
+}
+.chars-q{
+  font-family:'Fredericka the Great',serif;
+  font-size:28px;color:var(--ink);line-height:1.2;
+}
+.chars-row{
+  display:flex;flex-direction:column;gap:14px;
+  padding:18px 22px 24px;width:100%;flex:1;
+  overflow:hidden;position:relative;z-index:2;
+}
+/* Card horizontal: ilustración izq, info der */
+.char-card{
+  width:100%;flex:1;min-height:0;
+  background:var(--white);border-radius:20px;
+  overflow:hidden;cursor:pointer;
+  box-shadow:0 4px 20px var(--shadow);
+  border:2.5px solid transparent;
+  transition:all .3s cubic-bezier(.34,1.4,.64,1);
+  position:relative;display:flex;flex-direction:row;
+}
+.char-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 36px rgba(80,50,20,.2);
+}
+.char-card:active{transform:scale(.98)!important}
+.char-card.chosen{
+  border-color:var(--terra);
+  box-shadow:0 0 0 3px rgba(200,98,42,.18),0 8px 28px rgba(200,98,42,.25);
+}
+.char-stripe{width:6px;flex-shrink:0;}
+.char-art{
+  width:148px;flex-shrink:0;overflow:hidden;
+  position:relative;background:var(--warm);
+}
+.char-art svg{width:100%;height:100%;display:block;}
+.char-info{
+  flex:1;padding:18px 18px 16px;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.char-info-top{display:flex;flex-direction:column;gap:4px;}
+.char-name{
+  font-family:'Fredericka the Great',serif;
+  font-size:22px;line-height:1;
+}
+.char-role{
+  font-family:'Comfortaa',sans-serif;
+  font-size:9.5px;color:var(--terra);
+  font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+}
+.char-desc{
+  font-family:'Comfortaa',sans-serif;
+  font-size:11px;color:var(--ink2);font-weight:500;
+  line-height:1.55;margin-top:6px;
+}
+.char-stats{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.char-stat-row{display:flex;align-items:center;gap:8px;}
+.char-stat-lbl{
+  font-family:'Comfortaa',sans-serif;
+  font-size:9px;font-weight:700;color:var(--muted);
+  width:44px;flex-shrink:0;letter-spacing:.3px;
+}
+.char-stat-track{
+  flex:1;height:5px;background:var(--warm);
+  border-radius:99px;overflow:hidden;
+}
+.char-stat-fill{height:100%;border-radius:99px;}
+.char-arrow{
+  position:absolute;bottom:14px;right:14px;
+  width:28px;height:28px;background:var(--warm);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--terra);
+  transition:all .2s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.char-card:hover .char-arrow{background:var(--terra);color:white;transform:scale(1.15);}
+.chars-hint{
+  font-family:'Comfortaa',sans-serif;
+  font-size:11px;color:var(--muted);font-weight:600;
+  padding:0 0 16px;text-align:center;
+  position:relative;z-index:2;flex-shrink:0;
+}
+
+/* ═══════════════════════════════════════════
+   JUEGO
+═══════════════════════════════════════════ */
+#s-game{background:#c8b898}
+.game-art{
+  position:absolute;inset:0;height:72%;overflow:hidden;
+  transition:opacity .4s ease;
+}
+.game-art.swap{opacity:0}
+.game-art svg{width:100%;height:100%}
+
+/* HUD */
+.hud{
+  position:absolute;top:0;left:0;right:0;
+  padding:14px 16px 0;z-index:10;
+  display:flex;flex-direction:column;gap:6px;
+}
+.hud-bar-row{display:flex;align-items:center;gap:8px}
+.hud-icon{
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+  font-family:'Comfortaa',sans-serif;font-weight:700;color:white;
+}
+.hud-icon.energy{background:var(--terra)}
+.hud-icon.time{background:var(--olive)}
+.hud-track{
+  flex:1;height:9px;background:rgba(255,255,255,.28);
+  border-radius:100px;overflow:hidden;
+  max-width:110px;backdrop-filter:blur(4px);
+}
+.hud-fill{
+  height:100%;border-radius:100px;
+  transition:width .7s cubic-bezier(.4,0,.2,1),background .5s;
+}
+.fill-e{background:linear-gradient(90deg,var(--terra),var(--terra2))}
+.fill-t{background:linear-gradient(90deg,#7A9060,#9AB080)}
+.fill-warn{
+  background:linear-gradient(90deg,#C04020,#E06040)!important;
+  animation:pulsefill .65s infinite alternate;
+}
+@keyframes pulsefill{from{opacity:1}to{opacity:.5}}
+.hud-val{
+  font-family:'Comfortaa',sans-serif;
+  font-size:11px;font-weight:700;color:white;
+  text-shadow:0 1px 4px rgba(0,0,0,.3);min-width:22px;
+}
+.hud-home{
+  position:absolute;top:14px;right:14px;
+  width:36px;height:36px;background:rgba(255,255,255,.82);
+  border:none;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;box-shadow:0 3px 12px rgba(0,0,0,.14);
+  transition:all .18s;z-index:10;backdrop-filter:blur(4px);
+}
+.hud-home:hover{background:white;transform:scale(1.1)}
+
+/* Panel narrativo */
+.narr-panel{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(253,246,238,.96);
+  border-radius:26px 26px 0 0;
+  min-height:200px;padding:22px 28px 26px;
+  z-index:5;
+  box-shadow:0 -8px 40px rgba(80,50,20,.12);
+  backdrop-filter:blur(8px);
+  animation:panelUp .35s cubic-bezier(.22,1,.36,1);
+}
+@keyframes panelUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.narr-char-tag{
+  font-family:'Comfortaa',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  color:var(--terra);text-transform:uppercase;
+  margin-bottom:10px;display:flex;align-items:center;gap:6px;
+}
+.narr-dot{width:6px;height:6px;background:var(--terra);border-radius:50%}
+.narr-text{
+  font-family:'Comfortaa',sans-serif;
+  font-size:13.5px;line-height:1.85;color:var(--ink2);
+  font-weight:500;white-space:pre-line;
+}
+.narr-btn{
+  width:46px;height:46px;background:var(--terra);border:none;
+  border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  margin:14px auto 0;
+  font-family:'Fredericka the Great',serif;
+  font-size:18px;color:white;
+  box-shadow:0 4px 16px rgba(200,98,42,.38);
+  transition:all .2s cubic-bezier(.34,1.56,.64,1);
+}
+.narr-btn:hover{transform:scale(1.12)}
+.narr-btn:active{transform:scale(.9)}
+
+/* ═══════════════════════════════════════════
+   ELECCIÓN
+═══════════════════════════════════════════ */
+#s-choice{
+  background:var(--warm);
+  align-items:center;
+  justify-content:flex-start;
+  overflow:hidden;
+}
+
+/* Cabecera compacta */
+.choice-top{
+  display:flex;flex-direction:column;align-items:center;
+  padding:36px 28px 0;width:100%;
+  position:relative;z-index:2;flex-shrink:0;
+}
+.choice-eyebrow{
+  font-family:'Comfortaa',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;
+  color:var(--terra);text-transform:uppercase;margin-bottom:6px;
+}
+.choice-q{
+  font-family:'Fredericka the Great',serif;
+  font-size:24px;color:var(--ink);
+  line-height:1.2;text-align:center;
+}
+
+/* Timer circular — flota a la derecha del título */
+.choice-header-row{
+  width:100%;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;
+  padding:36px 28px 0;flex-shrink:0;
+}
+.choice-header-left{flex:1}
+.choice-eyebrow2{
+  font-family:'Comfortaa',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;
+  color:var(--terra);text-transform:uppercase;margin-bottom:6px;
+}
+.choice-q2{
+  font-family:'Fredericka the Great',serif;
+  font-size:22px;color:var(--ink);line-height:1.2;
+}
+.timer-wrap{position:relative;width:62px;height:62px;flex-shrink:0}
+.timer-svg{width:62px;height:62px;transform:rotate(-90deg)}
+.t-track{fill:none;stroke:rgba(80,50,20,.12);stroke-width:5}
+.t-arc{
+  fill:none;stroke:var(--terra);stroke-width:5;stroke-linecap:round;
+  stroke-dasharray:169.6;stroke-dashoffset:0;transition:stroke .4s;
+}
+.t-arc.warn{stroke:#D04020;animation:arcpulse .5s infinite alternate}
+@keyframes arcpulse{from{stroke:#D04020}to{stroke:#E06040}}
+.timer-num{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Fredericka the Great',serif;
+  font-size:19px;color:var(--ink);
+}
+.timer-num.warn{color:#D04020;animation:numpulse .4s infinite alternate}
+@keyframes numpulse{from{transform:scale(1)}to{transform:scale(1.1)}}
+
+/* ── CARDS APILADAS VERTICALMENTE ─────────── */
+.choice-cards{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
+  padding:0 22px 28px;
+  width:100%;
+  flex:1;
+  overflow:hidden;
+  position:relative;z-index:2;
+}
+
+/* Cada card: misma altura fija, ilustración como fondo */
+.opt-card{
+  flex:1;
+  min-height:0;
+  background:var(--white);
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 5px 22px var(--shadow);
+  border:2.5px solid transparent;
+  transition:all .28s cubic-bezier(.34,1.4,.64,1);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+.opt-card:hover{
+  transform:translateY(-4px) scale(1.015);
+  box-shadow:0 14px 38px rgba(80,50,20,.22);
+  border-color:var(--terra2);
+}
+.opt-card:active{transform:scale(.97)!important}
+.opt-card.flash{animation:cardflash .4s ease}
+@keyframes cardflash{
+  0%,100%{border-color:transparent}
+  50%{border-color:#C04020;box-shadow:0 0 24px rgba(200,64,32,.35)}
+}
+
+/* Ilustración ocupa la mayor parte */
+.opt-art{
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+  position:relative;
+}
+.opt-art svg{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Franja inferior del label — misma altura siempre */
+.opt-label{
+  flex-shrink:0;
+  height:58px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:0 14px;
+  background:var(--white);
+  border-top:1px solid var(--line);
+  position:relative;
+}
+.opt-label-title{
+  font-family:'Fredericka the Great',serif;
+  font-size:15px;color:var(--ink);
+  line-height:1.2;text-align:center;
+}
+.opt-label-sub{
+  font-family:'Comfortaa',sans-serif;
+  font-size:10px;color:var(--muted);
+  font-weight:600;margin-top:2px;text-align:center;
+}
+
+/* Número de opción — badge flotante */
+.opt-badge{
+  position:absolute;
+  top:10px;left:12px;
+  width:26px;height:26px;
+  background:rgba(253,246,238,.92);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fredericka the Great',serif;
+  font-size:13px;color:var(--terra3);
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+  backdrop-filter:blur(4px);
+  z-index:3;
+}
+
+/* ═══════════════════════════════════════════
+   POPUP EVENTOS Y CONSECUENCIAS
+═══════════════════════════════════════════ */
+.popup-veil{
+  position:absolute;inset:0;z-index:50;display:none;
+  align-items:center;justify-content:center;
+  background:rgba(45,35,24,.52);backdrop-filter:blur(3px);
+}
+.popup-veil.show{display:flex;animation:veilin .25s ease}
+@keyframes veilin{from{opacity:0}to{opacity:1}}
+.popup-card{
+  background:var(--white);border-radius:26px;width:285px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.22);
+  border:1px solid var(--line);
+  animation:cardpop .4s cubic-bezier(.34,1.5,.64,1);
+}
+@keyframes cardpop{
+  from{transform:scale(.72) translateY(28px);opacity:0}
+  to{transform:none;opacity:1}
+}
+.popup-header{
+  padding:22px 22px 14px;
+  display:flex;flex-direction:column;align-items:center;
+}
+.popup-icon-wrap{
+  width:62px;height:62px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;margin-bottom:10px;
+  box-shadow:0 4px 16px rgba(0,0,0,.1);
+  animation:iconpop .45s .12s cubic-bezier(.34,1.7,.64,1) both;
+}
+@keyframes iconpop{from{transform:scale(0) rotate(-20deg)}to{transform:none}}
+.popup-badge{
+  display:inline-block;padding:3px 11px;border-radius:100px;
+  font-family:'Comfortaa',sans-serif;
+  font-size:9px;font-weight:700;letter-spacing:1.8px;
+  text-transform:uppercase;margin-bottom:7px;
+}
+.popup-title{
+  font-family:'Fredericka the Great',serif;
+  font-size:20px;color:var(--ink);
+  text-align:center;line-height:1.2;
+}
+.popup-body{padding:0 20px}
+.popup-text{
+  font-family:'Comfortaa',sans-serif;
+  font-size:12.5px;color:var(--ink2);font-weight:500;
+  line-height:1.75;text-align:center;
+}
+.popup-costs{
+  display:flex;gap:10px;justify-content:center;
+  margin-top:14px;margin-bottom:4px;
+}
+.cost-pill{
+  background:var(--warm);border-radius:14px;
+  padding:9px 14px;
+  display:flex;flex-direction:column;align-items:center;
+  gap:3px;min-width:68px;
+  border:1.5px solid rgba(200,98,42,.18);
+}
+.cost-num{
+  font-family:'Fredericka the Great',serif;
+  font-size:22px;line-height:1;
+  animation:costbounce .5s .28s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes costbounce{from{transform:scale(0);opacity:0}to{transform:none;opacity:1}}
+.cost-lbl{
+  font-family:'Comfortaa',sans-serif;
+  font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.4px;
+}
+.popup-footer{padding:14px 20px 20px}
+.popup-btn{
+  width:100%;background:var(--terra);color:white;border:none;
+  border-radius:13px;padding:13px;
+  font-family:'Fredericka the Great',serif;
+  font-size:15px;cursor:pointer;
+  box-shadow:0 4px 14px rgba(200,98,42,.38);
+  transition:all .18s cubic-bezier(.34,1.56,.64,1);
+}
+.popup-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,98,42,.48)}
+.popup-btn:active{transform:scale(.96)}
+
+/* ═══════════════════════════════════════════
+   FINAL
+═══════════════════════════════════════════ */
+#s-end{background:var(--warm);align-items:center;justify-content:center}
+.end-card{
+  background:var(--white);border-radius:26px;width:325px;
+  overflow:hidden;
+  box-shadow:0 10px 48px rgba(80,50,20,.14);
+  border:1px solid var(--line);
+  animation:cardpop .5s cubic-bezier(.34,1.3,.64,1);
+}
+.end-header{padding:26px 26px 18px;text-align:center;position:relative}
+.end-icon{
+  font-size:50px;margin-bottom:8px;display:block;
+  animation:iconpop .5s .1s cubic-bezier(.34,1.56,.64,1) both;
+}
+.end-eyebrow{
+  font-family:'Comfortaa',sans-serif;
+  font-size:9.5px;font-weight:700;letter-spacing:2.5px;
+  color:var(--terra);text-transform:uppercase;margin-bottom:5px;
+}
+.end-title{
+  font-family:'Fredericka the Great',serif;
+  font-size:26px;color:var(--ink);line-height:1.1;
+}
+.end-body{padding:0 26px 22px}
+.end-text{
+  font-family:'Comfortaa',sans-serif;
+  font-size:12.5px;color:var(--ink2);font-weight:500;
+  line-height:1.8;text-align:center;margin-bottom:16px;
+}
+.end-stats{display:flex;gap:9px;margin-bottom:20px}
+.e-stat{
+  flex:1;background:var(--warm);border-radius:14px;
+  padding:11px 7px;text-align:center;
+  border:1.5px solid rgba(200,98,42,.14);
+}
+.e-stat-val{
+  font-family:'Fredericka the Great',serif;
+  font-size:24px;color:var(--terra3);line-height:1;
+}
+.e-stat-lbl{
+  font-family:'Comfortaa',sans-serif;
+  font-size:9.5px;font-weight:700;color:var(--muted);margin-top:3px;
+}
+.end-actions{display:flex;flex-direction:column;gap:9px}
+.end-btn-main{
+  background:var(--terra);color:white;border:none;
+  border-radius:13px;padding:14px;
+  font-family:'Fredericka the Great',serif;
+  font-size:15px;cursor:pointer;width:100%;
+  box-shadow:0 5px 18px rgba(200,98,42,.38);
+  transition:all .2s cubic-bezier(.34,1.56,.64,1);
+}
+.end-btn-main:hover{transform:translateY(-2px)}
+.end-btn-main:active{transform:scale(.97)}
+.end-btn-sec{
+  background:var(--warm);color:var(--terra3);
+  border:1.5px solid rgba(200,98,42,.28);
+  border-radius:13px;padding:12px;
+  font-family:'Fredericka the Great',serif;
+  font-size:14px;cursor:pointer;width:100%;
+  transition:all .18s;
+}
+.end-btn-sec:hover{background:white}
+.end-btn-sec:active{transform:scale(.97)}
+
+/* ── VELO TRANSICIÓN ─────────────────────── */
+#veil{
+  position:absolute;inset:0;z-index:100;
+  pointer-events:none;background:var(--warm);
+  opacity:0;transition:opacity .2s ease;
+}
+#veil.on{opacity:1;pointer-events:all}
